@@ -1,0 +1,17 @@
+*{
+    font-family:"Geist", sans-serif;
+}
+.stats{
+  display: flex;
+  gap: 20px;
+}
+
+@media(max-width:550px){
+  .stats{
+    flex-direction: column;
+  }
+
+  .job-card{
+    padding: 10px;
+  }
+}

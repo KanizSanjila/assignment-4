@@ -18,7 +18,6 @@ const interviewCount = document.getElementById("interviewCount");
 const rejectedCount = document.getElementById("rejectedCount");
 const tabCount = document.getElementById("tabCount");
 
-
 function render(){
 
   const filtered = data.currentFilter === "all"
@@ -48,8 +47,6 @@ function render(){
   updateDashboard();
 }
 
-
-
 function cardTemplate(job){
 
   const statusBadge =
@@ -57,13 +54,13 @@ function cardTemplate(job){
       ? `<span class="badge badge-success">INTERVIEW</span>`
       : job.status === "rejected"
       ? `<span class="badge badge-error">REJECTED</span>`
-      : `<span class="badge badge-neutral">NOT APPLIED</span>`;
+      : `<span class="btn btn-soft btn-success">NOT APPLIED</span>`;
 
   return `
   <div class="card bg-base-100 shadow">
     <div class="card-body">
 
-      <div class="flex justify-between items-center">
+      <div>
         <h2 class="card-title">${job.company}</h2>
         ${statusBadge}
       </div>
@@ -73,17 +70,17 @@ function cardTemplate(job){
       <p class="font-medium">${job.salary}</p>
       <p class="text-sm mt-2">${job.description}</p>
 
-      <div class="flex gap-2 mt-4 flex-wrap">
+      <div class="mt-4">
 
         <button 
-          class="btn btn-sm btn-success"
+          class="btn btn-sm btn-outline btn-success"
           data-action="interview"
           data-id="${job.id}">
           Interview
         </button>
 
         <button 
-          class="btn btn-sm btn-error"
+          class="btn btn-sm btn-outline btn-error"
           data-action="rejected"
           data-id="${job.id}">
           Rejected
@@ -103,7 +100,6 @@ function cardTemplate(job){
   `;
 }
 
-
 function updateDashboard(){
   totalCount.innerText = data.jobs.length;
   interviewCount.innerText =
@@ -111,8 +107,6 @@ function updateDashboard(){
   rejectedCount.innerText =
     data.jobs.filter(j => j.status === "rejected").length;
 }
-
-
 
 document.addEventListener("click", function(e){
 
@@ -143,12 +137,9 @@ document.addEventListener("click", function(e){
       tab.classList.remove("tab-active")
     );
     e.target.classList.add("tab-active");
-
     data.currentFilter = filter;
     render();
   }
 
 });
-
-
 render();

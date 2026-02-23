@@ -17,56 +17,54 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-base-200 p-6">
-    <!-- header -->
-     <section class="max-w-6xl mx-auto mb-10">
-    <h1 class="text-3xl font-bold mb-6">Job Application Tracker</h1>
+<body class="bg-base-200 p-4 md:p-8">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="max-w-6xl mx-auto">
 
-      <div class="card bg-base-100 shadow">
-        <div class="card-body">
-          <h2 class="card-title">Total</h2>
-          <p id="total-count" class="text-3xl font-bold">8</p>
-        </div>
-      </div>
+<h1 class="text-3xl font-bold mb-6">Job Application Tracker</h1>
 
-      <div class="card bg-base-100 shadow">
-        <div class="card-body">
-          <h2 class="card-title">Interview</h2>
-          <p id="interview-count" class="text-3xl font-bold text-success">0</p>
-        </div>
-      </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
 
-      <div class="card bg-base-100 shadow">
-        <div class="card-body">
-          <h2 class="card-title">Rejected</h2>
-          <p id="rejected-count" class="text-3xl font-bold text-error">0</p>
-        </div>
-      </div>
-
+  <div class="card bg-base-100 shadow">
+    <div class="card-body">
+      <h2 class="card-title">Total</h2>
+      <p id="totalCount" class="text-3xl font-bold">0</p>
     </div>
-  </section>
-  <!-- main -->
-   <section class="max-w-6xl mx-auto">
+  </div>
 
-    <div class="flex justify-between items-center mb-4">
-      <h2 class="text-2xl font-semibold">Available Jobs</h2>
-      <span id="job-count" class="text-sm font-medium">8 jobs</span>
+  <div class="card bg-base-100 shadow">
+    <div class="card-body">
+      <h2 class="card-title">Interview</h2>
+      <p id="interviewCount" class="text-3xl font-bold text-success">0</p>
     </div>
+  </div>
 
-    <!-- button -->
-    <div class="tabs tabs-boxed mb-6">
-      <button class="tab tab-active"">All</button>
-      <button class="tab">Interview</button>
-      <button class="tab">Rejected</button>
+  <div class="card bg-base-100 shadow">
+    <div class="card-body">
+      <h2 class="card-title">Rejected</h2>
+      <p id="rejectedCount" class="text-3xl font-bold text-error">0</p>
     </div>
+  </div>
 
-    <!-- Job Container -->
-    <div id="job-container" class="space-y-4"></div>
+</div>
 
-  </section>
-   
+
+<div class="flex justify-between items-center mb-4">
+  <h2 class="text-2xl font-semibold">Available Jobs</h2>
+  <span id="tabCount" class="font-medium"></span>
+</div>
+
+<div class="tabs tabs-boxed mb-6">
+  <button class="tab tab-active" data-filter="all">All</button>
+  <button class="tab" data-filter="interview">Interview</button>
+  <button class="tab" data-filter="rejected">Rejected</button>
+</div>
+
+<div id="jobContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+</div>
+
     <script src="script.js"></script>
+    <div class="items-center"></div>
 </body>
 </html>

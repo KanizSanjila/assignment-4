@@ -59,19 +59,16 @@ function cardTemplate(job){
   return `
   <div class="card bg-base-100 shadow">
     <div class="card-body">
-
-      <div>
         <h2 class="card-title">${job.company}</h2>
-        ${statusBadge}
-      </div>
-
       <p class="font-semibold">${job.position}</p>
       <p class="text-sm opacity-70">${job.location} - ${job.type}</p>
-      <p class="font-medium">${job.salary}</p>
+     <div>
+      <p class="font-medium mb-3">${job.salary}</p>
+      ${statusBadge}
+     </div>
       <p class="text-sm mt-2">${job.description}</p>
 
       <div class="mt-4">
-
         <button 
           class="btn btn-sm btn-outline btn-success"
           data-action="interview"
